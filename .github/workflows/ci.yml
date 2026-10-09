@@ -41,6 +41,6 @@ jobs:
           npm pack --silent
           mkdir /tmp/smoke && cd /tmp/smoke
           npm init -y > /dev/null
-          npm install "$GITHUB_WORKSPACE"/aieval-*.tgz zod > /dev/null
+          npm install "$GITHUB_WORKSPACE"/hamza1331-aieval-*.tgz zod > /dev/null
           npx aieval --version
-          node --input-type=module -e "import { evaluate, requiredFields } from 'aieval'; const r = await evaluate({ output: { a: 1 }, checks: [requiredFields(['a'])] }); if (!r.passed) process.exit(1)"
+          node --input-type=module -e "import { evaluate, requiredFields } from '@hamza1331/aieval'; const r = await evaluate({ output: { a: 1 }, checks: [requiredFields(['a'])] }); if (!r.passed) process.exit(1)"

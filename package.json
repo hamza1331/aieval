@@ -1,6 +1,9 @@
 {
-  "name": "aieval",
+  "name": "@hamza1331/aieval",
   "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "TypeScript-first validation toolkit for LLM outputs and agent actions.",
   "repository": {
     "type": "git",

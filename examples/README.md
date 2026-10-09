@@ -1,7 +1,7 @@
 # Examples
 
 Runnable with [`tsx`](https://github.com/privatenumber/tsx) from the repository root. They import from `../src`, so in
-your own project import from `"aieval"` instead.
+your own project import from `"@hamza1331/aieval"` instead.
 
 | File                                         | Shows                                                                |
 | -------------------------------------------- | -------------------------------------------------------------------- |
