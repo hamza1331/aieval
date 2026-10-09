@@ -1,0 +1,20 @@
+{
+  "name": "valid structured output passes",
+  "output": {
+    "name": "Ada",
+    "email": "ada@example.com"
+  },
+  "checks": [
+    {
+      "type": "requiredFields",
+      "fields": ["name", "email"]
+    },
+    {
+      "type": "noExtraFields",
+      "allowed": ["name", "email"]
+    }
+  ],
+  "expected": {
+    "passed": true
+  }
+}

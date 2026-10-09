@@ -1,0 +1,13 @@
+{
+  "name": "invalid JSON string output",
+  "output": "{not json",
+  "checks": [
+    {
+      "type": "json"
+    }
+  ],
+  "expected": {
+    "passed": false,
+    "codes": ["invalid_json"]
+  }
+}

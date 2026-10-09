@@ -1,0 +1,24 @@
+name: Feature request
+description: Suggest a new check or capability
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Failure mode you want to catch
+      description: What goes wrong with LLM output or agent actions today? A concrete example helps.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed API
+      description: Sketch how you'd use it. Deterministic checks are preferred over model-based ones.
+      render: ts
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - label: This fits a small, framework-agnostic validation library (not a dashboard or agent framework)
+          required: true

@@ -1,0 +1,17 @@
+{
+  "name": "tool call with JSON-string arguments",
+  "output": {
+    "name": "get_weather",
+    "arguments": "{\"city\":\"London\"}"
+  },
+  "checks": [
+    {
+      "type": "toolCall",
+      "name": "get_weather",
+      "requiredArgs": ["city"]
+    }
+  ],
+  "expected": {
+    "passed": true
+  }
+}

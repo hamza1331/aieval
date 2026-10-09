@@ -1,0 +1,19 @@
+{
+  "name": "extra field warning fails in strict mode",
+  "output": {
+    "name": "Ada",
+    "role": "admin"
+  },
+  "failOn": "warning",
+  "checks": [
+    {
+      "type": "noExtraFields",
+      "allowed": ["name"],
+      "severity": "warning"
+    }
+  ],
+  "expected": {
+    "passed": false,
+    "codes": ["schema_violation"]
+  }
+}

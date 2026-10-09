@@ -1,0 +1,16 @@
+{
+  "name": "missing required field",
+  "output": {
+    "name": "Ada"
+  },
+  "checks": [
+    {
+      "type": "requiredFields",
+      "fields": ["name", "email"]
+    }
+  ],
+  "expected": {
+    "passed": false,
+    "codes": ["missing_field"]
+  }
+}

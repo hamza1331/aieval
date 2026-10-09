@@ -1,0 +1,17 @@
+{
+  "name": "regex mismatch",
+  "output": {
+    "email": "not-an-email"
+  },
+  "checks": [
+    {
+      "type": "regex",
+      "field": "email",
+      "pattern": "^[^@]+@[^@]+$"
+    }
+  ],
+  "expected": {
+    "passed": false,
+    "codes": ["policy_violation"]
+  }
+}

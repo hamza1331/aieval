@@ -1,0 +1,76 @@
+{
+  "name": "aieval",
+  "version": "0.1.0",
+  "description": "TypeScript-first validation toolkit for LLM outputs and agent actions.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamza1331/aieval.git"
+  },
+  "homepage": "https://github.com/hamza1331/aieval#readme",
+  "bugs": {
+    "url": "https://github.com/hamza1331/aieval/issues"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "aieval": "dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./cli": {
+      "import": "./dist/cli.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.test.json",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "dev": "vitest",
+    "ci": "npm run lint && npm run format:check && npm run typecheck && npm run build && npm run test:coverage",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "ai",
+    "llm",
+    "evaluation",
+    "validation",
+    "agents",
+    "typescript"
+  ],
+  "author": "Hamza Ali <hamxa1331@gmail.com>",
+  "license": "MIT",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.0.0",
+    "@vitest/coverage-v8": "^3.2.7",
+    "eslint": "^10.12.0",
+    "prettier": "^3.9.9",
+    "tsx": "^4.23.15",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.71.1",
+    "vitest": "^3.2.4",
+    "zod": "^4.6.5"
+  }
+}

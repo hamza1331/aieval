@@ -1,0 +1,16 @@
+{
+  "name": "empty required value",
+  "output": {
+    "answer": "   "
+  },
+  "checks": [
+    {
+      "type": "nonEmpty",
+      "field": "answer"
+    }
+  ],
+  "expected": {
+    "passed": false,
+    "codes": ["policy_violation"]
+  }
+}

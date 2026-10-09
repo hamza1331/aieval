@@ -1,0 +1,18 @@
+{
+  "name": "extra field as warning does not fail",
+  "output": {
+    "name": "Ada",
+    "role": "admin"
+  },
+  "checks": [
+    {
+      "type": "noExtraFields",
+      "allowed": ["name"],
+      "severity": "warning"
+    }
+  ],
+  "expected": {
+    "passed": true,
+    "warningCodes": ["schema_violation"]
+  }
+}

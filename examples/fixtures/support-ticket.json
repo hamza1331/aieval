@@ -1,0 +1,45 @@
+[
+  {
+    "name": "valid support ticket",
+    "output": { "title": "Login fails", "priority": "high", "tags": ["auth"] },
+    "checks": [
+      { "type": "requiredFields", "fields": ["title", "priority"] },
+      {
+        "type": "enum",
+        "field": "priority",
+        "values": ["low", "medium", "high"]
+      },
+      { "type": "nonEmpty", "field": "title" }
+    ],
+    "expected": { "passed": true }
+  },
+  {
+    "name": "model invented a priority (regression case)",
+    "output": { "title": "Login fails", "priority": "urgent" },
+    "checks": [
+      {
+        "type": "enum",
+        "field": "priority",
+        "values": ["low", "medium", "high"]
+      }
+    ],
+    "expected": { "passed": false, "codes": ["invalid_enum"] }
+  },
+  {
+    "name": "agent tool call",
+    "output": { "name": "search_orders", "args": { "customer_id": "c_123" } },
+    "checks": [
+      {
+        "type": "toolCallOneOf",
+        "tools": [
+          {
+            "name": "search_orders",
+            "requiredArgs": ["customer_id"],
+            "argTypes": { "customer_id": "string" }
+          }
+        ]
+      }
+    ],
+    "expected": { "passed": true }
+  }
+]

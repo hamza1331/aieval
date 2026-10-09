@@ -1,0 +1,22 @@
+{
+  "name": "tool call with bad arg type",
+  "output": {
+    "name": "get_weather",
+    "args": {
+      "city": 5
+    }
+  },
+  "checks": [
+    {
+      "type": "toolCall",
+      "name": "get_weather",
+      "argTypes": {
+        "city": "string"
+      }
+    }
+  ],
+  "expected": {
+    "passed": false,
+    "codes": ["invalid_type"]
+  }
+}

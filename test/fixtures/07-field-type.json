@@ -1,0 +1,17 @@
+{
+  "name": "wrong field type",
+  "output": {
+    "score": "high"
+  },
+  "checks": [
+    {
+      "type": "fieldType",
+      "field": "score",
+      "expected": "number"
+    }
+  ],
+  "expected": {
+    "passed": false,
+    "codes": ["invalid_type"]
+  }
+}

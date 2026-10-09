@@ -1,0 +1,17 @@
+{
+  "name": "enum value drift",
+  "output": {
+    "status": "failed"
+  },
+  "checks": [
+    {
+      "type": "enum",
+      "field": "status",
+      "values": ["pending", "running", "succeeded"]
+    }
+  ],
+  "expected": {
+    "passed": false,
+    "codes": ["invalid_enum"]
+  }
+}

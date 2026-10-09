@@ -1,0 +1,22 @@
+{
+  "name": "valid tool call",
+  "output": {
+    "name": "get_weather",
+    "args": {
+      "city": "London"
+    }
+  },
+  "checks": [
+    {
+      "type": "toolCall",
+      "name": "get_weather",
+      "requiredArgs": ["city"],
+      "argTypes": {
+        "city": "string"
+      }
+    }
+  ],
+  "expected": {
+    "passed": true
+  }
+}

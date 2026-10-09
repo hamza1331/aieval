@@ -1,0 +1,21 @@
+{
+  "name": "unsupported tool call",
+  "output": {
+    "name": "delete_db",
+    "args": {}
+  },
+  "checks": [
+    {
+      "type": "toolCallOneOf",
+      "tools": [
+        {
+          "name": "get_weather"
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "passed": false,
+    "codes": ["tool_call_mismatch"]
+  }
+}

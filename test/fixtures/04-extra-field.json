@@ -1,0 +1,17 @@
+{
+  "name": "unexpected extra field",
+  "output": {
+    "name": "Ada",
+    "role": "admin"
+  },
+  "checks": [
+    {
+      "type": "noExtraFields",
+      "allowed": ["name"]
+    }
+  ],
+  "expected": {
+    "passed": false,
+    "codes": ["schema_violation"]
+  }
+}
