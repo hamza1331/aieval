@@ -1,7 +1,7 @@
 # aieval
 
 [![CI](https://github.com/hamza1331/aieval/actions/workflows/ci.yml/badge.svg)](https://github.com/hamza1331/aieval/actions/workflows/ci.yml)
-[![npm version](https://img.shields.io/npm/v/aieval.svg)](https://www.npmjs.com/package/aieval)
+[![npm version](https://img.shields.io/npm/v/@hamza1331/aieval.svg)](https://www.npmjs.com/package/@hamza1331/aieval)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 TypeScript-first, deterministic-first validation for LLM outputs and agent tool calls.
@@ -18,7 +18,7 @@ machine-readable, so they are easy to log, assert on, or feed back to a model fo
 ## Install
 
 ```bash
-npm install aieval zod
+npm install @hamza1331/aieval zod
 ```
 
 Requires Node.js 20+. `zod` (v4) is a peer dependency used by `schemaCheck`.
@@ -27,7 +27,7 @@ Requires Node.js 20+. `zod` (v4) is a peer dependency used by `schemaCheck`.
 
 ```ts
 import { z } from "zod";
-import { evaluate, requiredFields, schemaCheck } from "aieval";
+import { evaluate, requiredFields, schemaCheck } from "@hamza1331/aieval";
 
 const schema = z.object({ name: z.string(), email: z.string() });
 
@@ -43,7 +43,7 @@ console.log(result.failures); // []
 Other entry points:
 
 ```ts
-import { assert, validate } from "aieval";
+import { assert, validate } from "@hamza1331/aieval";
 
 const result = await validate(output, checks); // same as evaluate({ output, checks })
 await assert(output, checks); // throws EvaluationError (with `.result`) if validation fails
@@ -99,7 +99,7 @@ Validate a model's tool call before executing it. A call is `{ name, args }`, or
 as returned by OpenAI-style APIs.
 
 ```ts
-import { evaluate, toolCallCheck } from "aieval";
+import { evaluate, toolCallCheck } from "@hamza1331/aieval";
 
 const result = await evaluate({
   output: { name: "get_weather", args: { city: "London", unit: "celsius" } },
@@ -120,7 +120,7 @@ else, use `toolCallCheck.oneOf([...definitions])`.
 ### Custom checks
 
 ```ts
-import { customCheck } from "aieval";
+import { customCheck } from "@hamza1331/aieval";
 
 const evenScore = customCheck<{ score: number }>(
   "evenScore",
@@ -148,7 +148,7 @@ Deterministic checks cover what code can verify. For subjective quality you can 
 function you provide, so `aieval` has no provider SDK or network dependency.
 
 ```ts
-import { evaluate, semanticCheck, type SemanticJudge } from "aieval";
+import { evaluate, semanticCheck, type SemanticJudge } from "@hamza1331/aieval";
 
 const judge: SemanticJudge = async ({ input, output, criteria }) => {
   // call your model here and return { score: 0..1, reasoning? }
