@@ -1,5 +1,9 @@
 # aieval
 
+[![CI](https://github.com/hamza1331/aieval/actions/workflows/ci.yml/badge.svg)](https://github.com/hamza1331/aieval/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/aieval.svg)](https://www.npmjs.com/package/aieval)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 TypeScript-first, deterministic-first validation for LLM outputs and agent tool calls.
 
 Catch the failures you can detect with code — malformed JSON, missing fields, enum drift, bad tool-call arguments,
